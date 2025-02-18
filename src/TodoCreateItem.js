@@ -1,6 +1,8 @@
+import './TodoCreateItem.css';
+
 function TodoCreateItem() {
     return (
-        <button>Add new task</button>
+        <button class="CreateTodoButton">+</button>
     )
 }
 
