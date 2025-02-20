@@ -7,11 +7,11 @@ import { CreateTodoButton } from './CreateTodoButton';
 
 const defaultTodos = [
   { text: 'Cortar cebolla', completed: true },
-  { text: 'Cortar cebolla', completed: true },
+  { text: 'Cortar zanahoria', completed: true },
   { text: 'Tomar el Curso de Intro a React.js', completed: false },
   { text: 'Llorar con la Llorona', completed: false },
-  { text: 'LALALALALA', completed: false },
-  { text: 'LALALALALA', completed: false },
+  { text: 'LALALALA', completed: false },
+  { text: 'LAL---LALA', completed: false },
 ];
 
 function App() {
@@ -22,8 +22,31 @@ function App() {
 
   const completedTodos = todos.filter(todo => !!todo.completed).length; 
   const totalTodos = todos.length;
+
+  const searchedTodos = todos.filter(
+    (todo) => {
+      const todoText = todo.text.toLowerCase()
+      const searchText = searchValue.toLowerCase()
+      return todoText.includes(searchText);
+    }
+  );
  
-  console.log('Los usuarios quieren buscar ' + searchValue);
+  const completeTodo = (text) => {
+    const newTodos = [...todos]; // ... copia y trae toda la informacion de todos
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text === text
+    )
+    newTodos[todoIndex].completed = true;
+    setTodos(newTodos);
+  }
+  const deleteTodo = (text) => {
+    const newTodos = [...todos]; // ... copia y trae toda la informacion de todos
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text === text
+    )
+    newTodos.splice(todoIndex, 1);
+    setTodos(newTodos);
+  }
   
   return (
     <>
@@ -35,11 +58,13 @@ function App() {
       setsearchValue={setsearchValue} />
 
       <TodoList>
-        {defaultTodos.map(todo => (
+        {searchedTodos.map(todo => (
           <TodoItem
             key={todo.text}
             text={todo.text}
             completed={todo.completed}
+            onComplete={() => completeTodo(todo.text)}
+            onDelete={() => deleteTodo(todo.text)}
           />
         ))}
       </TodoList>
