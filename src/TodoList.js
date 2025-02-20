@@ -2,7 +2,7 @@ import './TodoList.css'
 
 function TodoList({ children }) {
     return (
-        <ul classname='TodoList'>
+        <ul className='TodoList'>
             {children}
         </ul>
     );
