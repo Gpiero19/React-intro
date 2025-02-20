@@ -1,10 +1,11 @@
 h1 {
-    font-size: '24px';
-    text-align: 'center';
+    font-size: 24px;
+    text-align: center;
     margin: 0;
-    padding: '48px';
-    background-color: aquamarine;
+    padding: 48px;
+    background-color: #61DAFA;
     font-weight: normal;
+    
 }
 
 .TodoCounter span {
