@@ -1,6 +1,8 @@
+import './TodoList.css'
+
 function TodoList({ children }) {
     return (
-        <ul>
+        <ul classname='TodoList'>
             {children}
         </ul>
     );
