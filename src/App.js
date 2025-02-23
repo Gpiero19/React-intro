@@ -5,17 +5,29 @@ import { TodoList } from './TodoList';
 import { TodoItem } from './TodoItem';
 import { CreateTodoButton } from './CreateTodoButton';
 
-const defaultTodos = [
-  { text: 'Cortar cebolla', completed: true },
-  { text: 'Cortar zanahoria', completed: true },
-  { text: 'Tomar el Curso de Intro a React.js', completed: false },
-  { text: 'Llorar con la Llorona', completed: false },
-  { text: 'LALALALA', completed: false },
-  { text: 'LAL---LALA', completed: false },
-];
+// const defaultTodos = [
+//   { text: 'Cortar cebolla', completed: true },
+//   { text: 'Cortar zanahoria', completed: true },
+//   { text: 'Tomar el Curso de Intro a React.js', completed: false },
+//   { text: 'Llorar con la Llorona', completed: false },
+//   { text: 'LALALALA', completed: false },
+//   { text: 'LAL---LALA', completed: false },
+// ];
+
+// localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos));
 
 function App() {
-  const [todos, setTodos] = React.useState(defaultTodos);
+  const localStorageTodos = localStorage.getItem('TODOS_V1');
+  let parsedTodos;
+
+  if(!localStorageTodos) {
+    localStorage.setItem('TODOS_V1', JSON.stringify([]));
+    parsedTodos = [];
+  } else {
+    parsedTodos = JSON.parse(localStorageTodos);
+  }
+
+  const [todos, setTodos] = React.useState(parsedTodos);
   const [searchValue, setsearchValue] = React.useState('');
 
 // !! is used to make sure the object is in Boolean, true or false
@@ -30,6 +42,11 @@ function App() {
       return todoText.includes(searchText);
     }
   );
+
+  const saveTodos = (newTodos) => {
+    localStorage.setItem('TODOS_V1', JSON.stringify(newTodos));
+    setTodos(newTodos);
+  }
  
   const completeTodo = (text) => {
     const newTodos = [...todos]; // ... copia y trae toda la informacion de todos
@@ -37,7 +54,7 @@ function App() {
       (todo) => todo.text === text
     )
     newTodos[todoIndex].completed = true;
-    setTodos(newTodos);
+    saveTodos(newTodos);
   }
   const deleteTodo = (text) => {
     const newTodos = [...todos]; // ... copia y trae toda la informacion de todos
@@ -45,7 +62,7 @@ function App() {
       (todo) => todo.text === text
     )
     newTodos.splice(todoIndex, 1);
-    setTodos(newTodos);
+    saveTodos(newTodos);
   }
   
   return (

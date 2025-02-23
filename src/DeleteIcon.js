@@ -4,7 +4,7 @@ import { TodoIcon } from './TodoIcon';
 function DeleteIcon( {onDelete} ) {
     return (
         <TodoIcon
-        type= 'type'
+        type= 'delete'
         color= 'gray'
         onClick={onDelete}
         />
