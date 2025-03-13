@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
+import './EmptyTodos.css';
 
 function EmptyTodos() {
-
-    return (
-        <p>Crea tu primer To Do</p>
-    );
-  };
+  return (
+    <p className='emptyTodoInfo'>¡Create your first ToDo!</p>
+  );
+}
 
 export { EmptyTodos };
