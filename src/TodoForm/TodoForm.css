@@ -1,7 +1,7 @@
 form {
     width: 90%;
     max-width: 300px;
-    background: linear-gradient(45deg, black, #0f054cff);
+    background: #61DAFA;
     padding: 3rem 4rem;
     display: flex;
     justify-content: center;
@@ -15,7 +15,7 @@ label {
     text-align: center;
     font-weight: bold;
     font-size: 1.6rem;
-    color: #ededed;
+    color: black;
     margin-bottom: 2rem;
     letter-spacing: .1rem;
 }
@@ -68,14 +68,15 @@ textarea:focus {
 }
 
 .TodoFormButtonAdd {
-    background: #fa154b;
+    background: green;
     color: #ededed;
     font-weight: bold;
+    border: .15rem solid black;
     /* box-shadow: 0 .2rem .5rem #72A9F2; */
 }
 
 .TodoFormButtonCancel {
-    background: transparent;
+    background: #fa154b;
     border: .15rem solid #fa154b;
     font-weight: bold;
     /* box-shadow: 0 .2rem .5rem #72A9F2; */
@@ -124,11 +125,13 @@ textarea:focus {
     }
 
     .TodoFormButtonAdd {
-        background: #fa154b;
+        background: green;
+        border: .15rem solid black;
+
     }
 
     .TodoFormButtonCancel {
-        background: transparent;
+        background: #fa154b;
         border: .15rem solid #fa154b;
     }
     
