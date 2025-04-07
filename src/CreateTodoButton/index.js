@@ -1,4 +1,5 @@
-import './CreateTodoButton.css'
+import './CreateTodoButton.css';
+import React from 'react';
 
 function CreateTodoButton({ setOpenModal }) {
   return (
