@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/React-intro/static/css/main.3398fa43.chunk.css",
+    "main.js": "/React-intro/static/js/main.dc277207.chunk.js",
+    "main.js.map": "/React-intro/static/js/main.dc277207.chunk.js.map",
+    "runtime~main.js": "/React-intro/static/js/runtime~main.0a1a63d9.js",
+    "runtime~main.js.map": "/React-intro/static/js/runtime~main.0a1a63d9.js.map",
+    "static/js/2.30044b8a.chunk.js": "/React-intro/static/js/2.30044b8a.chunk.js",
+    "static/js/2.30044b8a.chunk.js.map": "/React-intro/static/js/2.30044b8a.chunk.js.map",
+    "index.html": "/React-intro/index.html",
+    "precache-manifest.69c1d3dff6e07a606285c9348910c97f.js": "/React-intro/precache-manifest.69c1d3dff6e07a606285c9348910c97f.js",
+    "service-worker.js": "/React-intro/service-worker.js",
+    "static/css/main.3398fa43.chunk.css.map": "/React-intro/static/css/main.3398fa43.chunk.css.map",
+    "static/media/check.96d04b3d.svg": "/React-intro/static/media/check.96d04b3d.svg",
+    "static/media/delete.1aba82df.svg": "/React-intro/static/media/delete.1aba82df.svg"
+  }
+}
